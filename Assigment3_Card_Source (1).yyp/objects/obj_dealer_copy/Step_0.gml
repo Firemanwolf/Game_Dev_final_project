@@ -282,10 +282,16 @@ switch (global.phase){
 				instance_destroy(card1);
 				instance_destroy(card2);
 				combine = true;
+			}else{
+				//global.phase = global.phase_select;
+				//global.selected_card.target_y = 550;
+				//global.second_selected_card.target_y = 550;
+				//global.selected_card.in_hand = true;
+				//global.second_selected_card.in_hand = true;
+				//global.made_first_choice = false;
+				//global.made_second_choice = false;
+				global.phase = global.phase_select;
 			}
-			//else{
-			//	global.phase = global.phase_select;
-			//}
 		}
 	
 	
