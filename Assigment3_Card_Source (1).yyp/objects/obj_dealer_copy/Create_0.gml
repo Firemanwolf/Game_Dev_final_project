@@ -1,18 +1,32 @@
-////variables used for combining and desolving
-//global.combine = false;
-//global.desolve = false;
+//variables used for combining and desolving
+global.combine = false;
+combine = false;
+global.desolve = false;
+
+global.made_first_choice = false;
+global.made_second_choice = false;
+
+
+global.first_choice = noone;
+global.second_choice = noone;
+global.temp = noone;
+
+global.gameState = "combine";
+global.second_selected_card = noone;
+
 
 
 //enumerate states for the state machine
 global.phase_deal = 0;
 global.phase_computer = 1;
 global.phase_select = 2;
-global.phase_play= 3;
-global.phase_computer_choice = 4;
-global.phase_player_choice = 5;
-global.phase_result = 6;
-global.phase_cleanup = 7;
-global.phase_reshuffle = 8;
+global.combine = 3;
+global.phase_play= 4;
+global.phase_computer_choice = 5;
+global.phase_player_choice = 6;
+global.phase_result = 7;
+global.phase_cleanup = 8;
+global.phase_reshuffle = 9;
 global.phase = global.phase_deal;
 
 //a global references so a card can tell us if it's selected
@@ -24,6 +38,9 @@ global.rock = 0;
 global.paper = 1;
 global.scissors = 2;
 global.virus = 3;
+global.rock2 = 4;
+global.paper2 = 5;
+global.scissors2 = 6;
 
 buffed = false;
 computer_buffed = false;
