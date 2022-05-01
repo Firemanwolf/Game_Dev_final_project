@@ -1,5 +1,6 @@
 
 started = false;
+emptied_early = false;
 
 //variables used for combining and desolving
 global.combine = false;
