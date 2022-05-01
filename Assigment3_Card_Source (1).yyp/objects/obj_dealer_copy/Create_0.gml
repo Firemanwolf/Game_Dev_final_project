@@ -1,10 +1,16 @@
+
+started = false;
+
 //variables used for combining and desolving
 global.combine = false;
-combine = false;
-global.desolve = false;
+global.combine_happen = false;
+global.dissolve = false;
+global.dissolve_happen = false;
+
 
 global.made_first_choice = false;
 global.made_second_choice = false;
+global.made_dissolve_choice = false;
 
 
 global.first_choice = noone;
@@ -21,7 +27,7 @@ global.phase_deal = 0;
 global.phase_computer = 1;
 global.phase_select = 2;
 global.combine = 3;
-global.disolve = 4;
+global.dissolve = 4;
 global.phase_play= 5;
 global.phase_computer_choice = 6;
 global.phase_player_choice = 7;

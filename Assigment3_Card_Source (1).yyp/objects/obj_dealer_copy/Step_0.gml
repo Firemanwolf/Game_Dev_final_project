@@ -83,23 +83,25 @@ switch (global.phase){
 	case global.phase_select:
 	//global.gameState = "combine"
 	//this needs to go into a different case for being able to handle combination or dissolving
-	show_debug_message(global.temp);
-	show_debug_message(global.second_selected_card);
-		if(hand_player[|0].type == hand_player[|1].type && hand_player[|1].type == hand_player[|2].type){
-			buffed = true;
-		}else if(hand_player[|0].type != hand_player[|1].type
-			   &&(hand_player[|1].type != hand_player[|2].type)
-			   &&(hand_player[|0].type != hand_player[|2].type))
-		{
-			play_player = instance_create_depth(320,386,0,obj_card)
-			play_player.type = global.virus;
-			play_player.target_x = 320;
-			play_player.target_y = 386;
-			play_player.face_up = true;
-			audio_play_sound(snd_flip,0,0);
-			global.phase = global.phase_play;
-			wait_timer = 0;
+		if(!started){
+			if(hand_player[|0].type == hand_player[|1].type && hand_player[|1].type == hand_player[|2].type){
+				buffed = true;
+			}else if(hand_player[|0].type != hand_player[|1].type
+				   &&(hand_player[|1].type != hand_player[|2].type)
+				   &&(hand_player[|0].type != hand_player[|2].type))
+			{
+				play_player = instance_create_depth(320,386,0,obj_card)
+				play_player.type = global.virus;
+				play_player.target_x = 320;
+				play_player.target_y = 386;
+				play_player.face_up = true;
+				audio_play_sound(snd_flip,0,0);
+				global.phase = global.phase_play;
+				wait_timer = 0;
+			}
+			started = true;
 		}
+		
 		if(global.gameState == "play"){
 			//show_debug_message("in play");
 			if (mouse_check_button_pressed(mb_left)){
@@ -117,6 +119,7 @@ switch (global.phase){
 					}
 					//ds_list_delete(hand_player,hand_index);
 					audio_play_sound(snd_flip,0,0);
+					started = false;
 					global.phase = global.phase_play;
 					global.selected_card = noone;
 					wait_timer = 0;
@@ -165,6 +168,28 @@ switch (global.phase){
 				global.phase = global.combine;
 			}
 			
+		}else if (global.gameState == "dissolve"){
+			
+			if (!global.made_dissolve_choice){
+				if (global.selected_card != noone){
+					//play the card
+					var hand_index = ds_list_find_index(hand_player, global.selected_card);
+					play_player = hand_player[| hand_index];
+					//play_player.target_x = 320;
+					play_player.target_y = 400;
+					play_player.in_hand = false;
+					global.first_choice = play_player;
+					global.made_dissolve_choice = true;
+					global.temp = global.selected_card;
+					show_debug_message(global.temp);
+				}
+				
+			if(global.temp != noone){
+				global.phase = global.dissolve;
+			}
+				wait_timer = 0;
+			}
+			
 		}
 		break;
 		
@@ -174,9 +199,9 @@ switch (global.phase){
 		//show_debug_message(global.second_selected_card);
 		var card = noone;
 		var second_card = noone;
-		if (!combine){
+		if (!global.combine_happen){
 			if (global.temp.type == global.rock && global.second_selected_card.type == global.rock){
-				show_debug_message(ds_list_size(hand_player));
+				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.rock2;
 				
@@ -204,15 +229,15 @@ switch (global.phase){
 
 				ds_list_replace(hand_player, hand_index,card);
 				ds_list_replace(hand_player, second_index, second_card);
-				show_debug_message(ds_list_size(hand_player));
+				//show_debug_message(ds_list_size(hand_player));
 				
 				instance_destroy(card1);
 				instance_destroy(card2);
-				combine = true;
+				global.combine_happen = true;
 			
 				//global.phase = global.phase_play;
 			}else if (global.temp.type == global.paper && global.second_selected_card.type == global.paper){
-				show_debug_message(ds_list_size(hand_player));
+				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.paper2;
 				
@@ -241,16 +266,16 @@ switch (global.phase){
 
 				ds_list_replace(hand_player, hand_index,card);
 				ds_list_replace(hand_player, second_index, second_card);
-				show_debug_message(ds_list_size(hand_player));
+				//show_debug_message(ds_list_size(hand_player));
 				
 				instance_destroy(card1);
 				instance_destroy(card2);
-				combine = true;
+				global.combine_happen = true;
 			
 			
 				//global.phase = global.phase_play;
 			} else if (global.temp.type == global.scissors && global.second_selected_card.type == global.scissors){
-				show_debug_message(ds_list_size(hand_player));
+				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.scissors2;
 				
@@ -279,11 +304,11 @@ switch (global.phase){
 
 				ds_list_replace(hand_player, hand_index,card);
 				ds_list_replace(hand_player, second_index, second_card);
-				show_debug_message(ds_list_size(hand_player));
+				//show_debug_message(ds_list_size(hand_player));
 				
 				instance_destroy(card1);
 				instance_destroy(card2);
-				combine = true;
+				global.combine_happen = true;
 			}else{
 				//global.phase = global.phase_select;
 				global.temp.target_y = 550;
@@ -307,7 +332,95 @@ switch (global.phase){
 	
 	break;
 	
-	case global.disolve:
+	case global.dissolve:
+		//show_debug_message(global.temp);
+		//show_debug_message(global.selected_card);
+		//show_debug_message(global.second_selected_card);
+		var card = noone;
+		if (!global.dissolve_happen){
+			if(global.temp.type == global.rock2){
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.rock;
+				
+				
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				show_debug_message(hand_index);
+				
+				var card1 = hand_player[| hand_index];
+			
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = 550;
+				card.face_up = true;
+				card.in_hand = true;
+
+				ds_list_replace(hand_player, hand_index,card);
+
+				instance_destroy(card1);
+				global.dissolve_happen = true;
+				
+				
+			}else if (global.temp.type == global.scissors2){
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.scissors;
+				
+				
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				show_debug_message(hand_index);
+				
+				var card1 = hand_player[| hand_index];
+			
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = 550;
+				card.face_up = true;
+				card.in_hand = true;
+
+				ds_list_replace(hand_player, hand_index,card);
+
+				instance_destroy(card1);
+				global.dissolve_happen = true;
+				
+
+			}else if (global.temp.type == global.paper2){
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.paper;
+				
+				
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				show_debug_message(hand_index);
+				
+				var card1 = hand_player[| hand_index];
+			
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = 550;
+				card.face_up = true;
+				card.in_hand = true;
+
+				ds_list_replace(hand_player, hand_index,card);
+
+				instance_destroy(card1);
+				global.dissolve_happen = true;
+				
+			}else{
+				global.temp.target_y = 550;
+				global.temp.in_hand = true;
+				
+								
+				global.temp = noone;
+				global.selected_card = noone;
+				global.second_selected_card = noone;
+				global.made_dissolve_choice = false;
+				global.dissolve_happen = false;
+				
+				global.phase = global.phase_select;
+				
+			}
+			
+			
+		}
+		
 	
 	break;
 		
@@ -480,14 +593,13 @@ switch (global.phase){
 			}
 		}
 		global.temp = noone;
-		//play_player = noone;
-		//global.first_choice = noone;
-		//global.second_choice = noone;
 		global.made_first_choice = false;
 		global.made_second_choice = false;
+		global.made_dissolve_choice = false;
 		global.selected_card = noone;
 		global.second_selected_card = noone;
-		combine = false;
+		global.combine_happen = false;
+		global.dissolve_happen = false;
 	
 		break;
 		
