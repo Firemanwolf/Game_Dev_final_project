@@ -306,6 +306,10 @@ switch (global.phase){
 	
 	
 	break;
+	
+	case global.disolve:
+	
+	break;
 		
 	//resolve the winner or loser after a delay	
 	case global.phase_play:

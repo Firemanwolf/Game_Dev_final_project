@@ -21,12 +21,13 @@ global.phase_deal = 0;
 global.phase_computer = 1;
 global.phase_select = 2;
 global.combine = 3;
-global.phase_play= 4;
-global.phase_computer_choice = 5;
-global.phase_player_choice = 6;
-global.phase_result = 7;
-global.phase_cleanup = 8;
-global.phase_reshuffle = 9;
+global.disolve = 4;
+global.phase_play= 5;
+global.phase_computer_choice = 6;
+global.phase_player_choice = 7;
+global.phase_result = 8;
+global.phase_cleanup = 9;
+global.phase_reshuffle = 10;
 global.phase = global.phase_deal;
 
 //a global references so a card can tell us if it's selected
