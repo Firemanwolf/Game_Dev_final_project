@@ -83,6 +83,8 @@ switch (global.phase){
 	case global.phase_select:
 	//global.gameState = "combine"
 	//this needs to go into a different case for being able to handle combination or dissolving
+	show_debug_message(global.temp);
+	show_debug_message(global.second_selected_card);
 		if(hand_player[|0].type == hand_player[|1].type && hand_player[|1].type == hand_player[|2].type){
 			buffed = true;
 		}else if(hand_player[|0].type != hand_player[|1].type
@@ -284,12 +286,20 @@ switch (global.phase){
 				combine = true;
 			}else{
 				//global.phase = global.phase_select;
-				//global.selected_card.target_y = 550;
-				//global.second_selected_card.target_y = 550;
-				//global.selected_card.in_hand = true;
-				//global.second_selected_card.in_hand = true;
-				//global.made_first_choice = false;
-				//global.made_second_choice = false;
+				global.temp.target_y = 550;
+				global.second_selected_card.target_y = 550;
+
+				global.temp.in_hand = true;
+				global.second_selected_card.in_hand = true;
+				
+				
+				
+				global.temp = noone;
+				global.selected_card = noone;
+				global.second_selected_card = noone;
+				
+				global.made_first_choice = false;
+				global.made_second_choice = false;
 				global.phase = global.phase_select;
 			}
 		}
