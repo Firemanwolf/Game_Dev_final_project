@@ -20,13 +20,18 @@ if (global.phase == global.phase_select){
 	// if already selected and second selected is not set then set it 
 	//card = instance_posiiton(mouse_x,mouse_y, obj_card)
 	var card = instance_position(mouse_x, mouse_y, obj_card);
-	if(card.in_hand){
-		if(card != noone){
+	if(card != noone){
+		if(card.in_hand){
 			if (global.selected_card == noone){
 				global.selected_card = card;
 			}else if (global.second_selected_card == noone){
 				global.second_selected_card = card;
 			}
 		}
+	}else{
+		global.selected_card = noone;
+		global.second_selected_card = noone;
+		
 	}
+
 }

@@ -28,6 +28,12 @@ if (type == global.scissors2) sprite_index = spr_scissors2;
 if (type == global.rock3) sprite_index = spr_rock3;
 if (type == global.paper3) sprite_index = spr_paper3;
 if (type == global.scissors3) sprite_index = spr_scissors3;
+if (type == global.rock4) sprite_index = spr_rock4;
+if (type == global.paper4) sprite_index = spr_paper4;
+if (type == global.scissors4) sprite_index = spr_scissors4;
+if (type == global.rock9) sprite_index = spr_rock9;
+if (type == global.paper9) sprite_index = spr_paper9;
+if (type == global.scissors9) sprite_index = spr_scissors9;
 if (face_up == false) sprite_index = spr_back;
 if(rank == 3) image_index = 1;
 

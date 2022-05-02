@@ -53,6 +53,13 @@ global.scissors2 = 6;
 global.rock3 = 7;
 global.paper3 = 8;
 global.scissors3 = 9;
+global.rock4 = 10;
+global.paper4 = 11;
+global.scissors4 = 12;
+global.rock9 = 13;
+global.paper9 = 14;
+global.scissors9 = 15;
+
 
 buffed = false;
 computer_buffed = false;
