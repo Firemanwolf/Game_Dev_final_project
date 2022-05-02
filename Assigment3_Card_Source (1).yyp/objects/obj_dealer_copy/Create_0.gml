@@ -1,6 +1,7 @@
 
 started = false;
 emptied_early = false;
+moved = false;
 
 //variables used for combining and desolving
 global.combine = false;
@@ -49,6 +50,9 @@ global.virus = 3;
 global.rock2 = 4;
 global.paper2 = 5;
 global.scissors2 = 6;
+global.rock3 = 7;
+global.paper3 = 8;
+global.scissors3 = 9;
 
 buffed = false;
 computer_buffed = false;

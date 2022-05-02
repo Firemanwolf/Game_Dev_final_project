@@ -25,6 +25,9 @@ if (type == global.virus) sprite_index = spr_virus;
 if (type == global.rock2) sprite_index = spr_rock2;
 if (type == global.paper2) sprite_index = spr_paper2;
 if (type == global.scissors2) sprite_index = spr_scissors2;
+if (type == global.rock3) sprite_index = spr_rock3;
+if (type == global.paper3) sprite_index = spr_paper3;
+if (type == global.scissors3) sprite_index = spr_scissors3;
 if (face_up == false) sprite_index = spr_back;
 if(rank == 3) image_index = 1;
 

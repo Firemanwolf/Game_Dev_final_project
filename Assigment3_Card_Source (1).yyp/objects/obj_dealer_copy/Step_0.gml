@@ -205,15 +205,13 @@ switch (global.phase){
 		//show_debug_message(global.temp)
 		//show_debug_message(global.second_selected_card);
 		var card = noone;
-		var second_card = noone;
+		//var second_card = noone;
 		if (!global.combine_happen){
 			if (global.temp.type == global.rock && global.second_selected_card.type == global.rock){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.rock2;
-				
-				//second_card = instance_create_depth(320,240,0,obj_card)
-				//second_card.type = global.rock2;
+				card.rank = 2;
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
 				var card1 = hand_player[| hand_index];
@@ -223,41 +221,56 @@ switch (global.phase){
 			
 				
 				card.target_x = card1.target_x;
-				//card.target_y = card1.target_y;
 				card.target_y = 550;
 				card.face_up = true;
 				card.in_hand = true;
 				
-				
-				//second_card.target_x = card2.target_x;
-				////second_card.target_y = card2.target_y;
-				//second_card.target_y = 550;
-				//second_card.face_up = true;
-				//second_card.in_hand = true;
-			
-				
 
 				ds_list_replace(hand_player, hand_index,card);
 				ds_list_delete(hand_player,second_index);
-				//ds_list_replace(hand_player, second_index, second_card);
-				//show_debug_message(ds_list_size(hand_player));
-				
+
 				instance_destroy(card1);
 				instance_destroy(card2);
 				deck_size -= 1;
 				global.combine_happen = true;
 			
 				//global.phase = global.phase_play;
+			}else if (global.temp.type == global.rock && global.second_selected_card.type == global.rock2 || (global.temp.type == global.rock2 && global.second_selected_card.type == global.rock )){
+				//show_debug_message(ds_list_size(hand_player));
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.rock3;
+				card.rank = 3;
+				
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				var card1 = hand_player[| hand_index];
+				
+				var second_index = ds_list_find_index(hand_player, global.second_selected_card);
+				var card2 = hand_player[| second_index];
+			
+				
+				card.target_x = card1.target_x;
+				card.target_y = 550;
+				card.face_up = true;
+				card.in_hand = true;
+				
+
+				ds_list_replace(hand_player, hand_index,card);
+				ds_list_delete(hand_player,second_index);
+
+				instance_destroy(card1);
+				instance_destroy(card2);
+				deck_size -= 1;
+				global.combine_happen = true;
+			
+			
 			}else if (global.temp.type == global.paper && global.second_selected_card.type == global.paper){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.paper2;
+				card.rank = 2;
 				var hand_index = ds_list_find_index(hand_player, global.temp);
 				var card1 = hand_player[| hand_index];
 				
-				
-				//second_card = instance_create_depth(320,240,0,obj_card)
-				//second_card.type = global.paper2;
 				var second_index = ds_list_find_index(hand_player, global.second_selected_card);
 				var card2 = hand_player[| second_index];
 			
@@ -266,21 +279,13 @@ switch (global.phase){
 				//card.target_y = card1.target_y;
 				card.target_y = 550;
 				card.face_up = true;
-				
-				//second_card.target_x = card2.target_x;
-				////second_card.target_y = card2.target_y;
-				//second_card.target_y = 550;
-				//second_card.face_up = true;
-			
 			
 				card.in_hand = true;
 				//second_card.in_hand = true;
 
 				ds_list_replace(hand_player, hand_index,card);
 				ds_list_delete(hand_player,second_index);
-				//ds_list_replace(hand_player, second_index, second_card);
-				//show_debug_message(ds_list_size(hand_player));
-				
+
 				instance_destroy(card1);
 				instance_destroy(card2);
 				deck_size -= 1;
@@ -288,44 +293,93 @@ switch (global.phase){
 			
 			
 				//global.phase = global.phase_play;
-			} else if (global.temp.type == global.scissors && global.second_selected_card.type == global.scissors){
+			} else if (global.temp.type == global.paper && global.second_selected_card.type == global.paper2 || (global.temp.type == global.paper2 && global.second_selected_card.type == global.paper )){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
-				card.type = global.scissors2;
+				card.type = global.paper3;
+				card.rank = 3;
 				var hand_index = ds_list_find_index(hand_player, global.temp);
 				var card1 = hand_player[| hand_index];
 				
-				
 				var second_index = ds_list_find_index(hand_player, global.second_selected_card);
 				var card2 = hand_player[| second_index];
-				//second_card = instance_create_depth(320,240,0,obj_card)
-				//second_card.type = global.scissors2;
+			
 				
 				card.target_x = card1.target_x;
 				//card.target_y = card1.target_y;
 				card.target_y = 550;
 				card.face_up = true;
-				
-				//second_card.target_x = card2.target_x;
-				////second_card.target_y = card2.target_y;
-				//second_card.target_y = 550;
-				//second_card.face_up = true;
-			
 			
 				card.in_hand = true;
 				//second_card.in_hand = true;
 
 				ds_list_replace(hand_player, hand_index,card);
 				ds_list_delete(hand_player,second_index);
-				//ds_list_replace(hand_player, second_index, second_card);
+
+				instance_destroy(card1);
+				instance_destroy(card2);
+				deck_size -= 1;
+				global.combine_happen = true;
+			
+			
+				//global.phase = global.phase_play;
+			}else if (global.temp.type == global.scissors && global.second_selected_card.type == global.scissors){
 				//show_debug_message(ds_list_size(hand_player));
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.scissors2;
+				card.rank = 2;
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				var card1 = hand_player[| hand_index];
 				
+				
+				var second_index = ds_list_find_index(hand_player, global.second_selected_card);
+				var card2 = hand_player[| second_index];
+
+				
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = 550;
+				card.face_up = true;
+			
+				card.in_hand = true;
+
+
+				ds_list_replace(hand_player, hand_index,card);
+				ds_list_delete(hand_player,second_index);
+
+				instance_destroy(card1);
+				instance_destroy(card2);
+				deck_size -= 1;
+				global.combine_happen = true;
+			}else if (global.temp.type == global.scissors && global.second_selected_card.type == global.scissors2 || (global.temp.type == global.scissors2 && global.second_selected_card.type == global.scissors)){
+				//show_debug_message(ds_list_size(hand_player));
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.scissors3;
+				card.rank = 3;
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				var card1 = hand_player[| hand_index];
+				
+				
+				var second_index = ds_list_find_index(hand_player, global.second_selected_card);
+				var card2 = hand_player[| second_index];
+
+				
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = 550;
+				card.face_up = true;
+			
+				card.in_hand = true;
+
+
+				ds_list_replace(hand_player, hand_index,card);
+				ds_list_delete(hand_player,second_index);
+
 				instance_destroy(card1);
 				instance_destroy(card2);
 				deck_size -= 1;
 				global.combine_happen = true;
 			}else{
-				//global.phase = global.phase_select;
 				global.temp.target_y = 550;
 				global.second_selected_card.target_y = 550;
 
@@ -353,6 +407,7 @@ switch (global.phase){
 		//show_debug_message(global.second_selected_card);
 		var card = noone;
 		var card2 = noone;
+		var card3 = noone;
 		if (!global.dissolve_happen){
 			if(global.temp.type == global.rock2){
 				card = instance_create_depth(320,240,0,obj_card)
@@ -374,7 +429,7 @@ switch (global.phase){
 
 				instance_destroy(card1);
 				
-				show_debug_message(ds_list_size(discard_pile));
+				//show_debug_message(ds_list_size(discard_pile));
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.rock;
 				ds_list_add(discard_pile, card2);
@@ -382,8 +437,51 @@ switch (global.phase){
 				card2.target_x = 600;
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
-				show_debug_message(ds_list_size(discard_pile));
+				//show_debug_message(ds_list_size(discard_pile));
 				deck_size += 1;
+				
+				global.dissolve_happen = true;
+				
+				
+			}else if(global.temp.type == global.rock3){
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.rock;
+				
+				
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				show_debug_message(hand_index);
+				
+				var card1 = hand_player[| hand_index];
+			
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = 550;
+				card.face_up = true;
+				card.in_hand = true;
+
+				ds_list_replace(hand_player, hand_index,card);
+
+				instance_destroy(card1);
+				
+
+				card2 = instance_create_depth(320,240,0,obj_card)
+				card2.type = global.rock;
+				ds_list_add(discard_pile, card2);
+				card2.target_y = 320 - ds_list_size(discard_pile)*2;
+				card2.target_x = 600;
+				card2.face_up = true;
+				card2.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+				card3 = instance_create_depth(320,240,0,obj_card)
+				card3.type = global.rock;
+				ds_list_add(discard_pile, card2);
+				card3.target_y = 320 - ds_list_size(discard_pile)*2;
+				card3.target_x = 600;
+				card3.face_up = true;
+				card3.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+				
+				deck_size += 2;
 				
 				global.dissolve_happen = true;
 				
@@ -408,7 +506,7 @@ switch (global.phase){
 
 				instance_destroy(card1);
 							
-				show_debug_message(ds_list_size(discard_pile));
+				//show_debug_message(ds_list_size(discard_pile));
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.scissors;
 				ds_list_add(discard_pile, card2);
@@ -416,8 +514,50 @@ switch (global.phase){
 				card2.target_x = 600;
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
-				show_debug_message(ds_list_size(discard_pile));
+				//show_debug_message(ds_list_size(discard_pile));
 				deck_size += 1;
+				
+				global.dissolve_happen = true;
+				
+
+			}else if (global.temp.type == global.scissors3){
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.scissors;
+				
+				
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				show_debug_message(hand_index);
+				
+				var card1 = hand_player[| hand_index];
+			
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = 550;
+				card.face_up = true;
+				card.in_hand = true;
+
+				ds_list_replace(hand_player, hand_index,card);
+
+				instance_destroy(card1);
+							
+				card2 = instance_create_depth(320,240,0,obj_card)
+				card2.type = global.scissors;
+				ds_list_add(discard_pile, card2);
+				card2.target_y = 320 - ds_list_size(discard_pile)*2;
+				card2.target_x = 600;
+				card2.face_up = true;
+				card2.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+				card3 = instance_create_depth(320,240,0,obj_card)
+				card3.type = global.scissors;
+				ds_list_add(discard_pile, card2);
+				card3.target_y = 320 - ds_list_size(discard_pile)*2;
+				card3.target_x = 600;
+				card3.face_up = true;
+				card3.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+
+				deck_size += 2;
 				
 				global.dissolve_happen = true;
 				
@@ -443,7 +583,7 @@ switch (global.phase){
 				instance_destroy(card1);
 				
 								
-				show_debug_message(ds_list_size(discard_pile));
+				//show_debug_message(ds_list_size(discard_pile));
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.paper;
 				ds_list_add(discard_pile, card2);
@@ -451,24 +591,72 @@ switch (global.phase){
 				card2.target_x = 600;
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
-				show_debug_message(ds_list_size(discard_pile));
+				//show_debug_message(ds_list_size(discard_pile));
 				deck_size += 1;
 				
 				global.dissolve_happen = true;
 				
-			}else{
-				global.temp.target_y = 550;
-				global.temp.in_hand = true;
+			}else if (global.temp.type == global.paper3){
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = global.paper;
+				
+				
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				show_debug_message(hand_index);
+				
+				var card1 = hand_player[| hand_index];
+			
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = 550;
+				card.face_up = true;
+				card.in_hand = true;
+
+				ds_list_replace(hand_player, hand_index,card);
+
+				instance_destroy(card1);
 				
 								
-				global.temp = noone;
-				global.selected_card = noone;
-				global.second_selected_card = noone;
+
+				card2 = instance_create_depth(320,240,0,obj_card)
+				card2.type = global.paper;
+				ds_list_add(discard_pile, card2);
+				card2.target_y = 320 - ds_list_size(discard_pile)*2;
+				card2.target_x = 600;
+				card2.face_up = true;
+				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-				global.made_dissolve_choice = false;
-				global.dissolve_happen = false;
+				card3 = instance_create_depth(320,240,0,obj_card)
+				card3.type = global.paper;
+				ds_list_add(discard_pile, card2);
+				card3.target_y = 320 - ds_list_size(discard_pile)*2;
+				card3.target_x = 600;
+				card3.face_up = true;
+				card3.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-				global.phase = global.phase_select;
+				
+				
+				
+				deck_size += 2;
+				
+				global.dissolve_happen = true;
+				
+			}else{
+				if(!moved){
+					global.temp.target_y = 550;
+					global.temp.in_hand = true;
+				
+								
+					global.temp = noone;
+					global.selected_card = noone;
+					global.second_selected_card = noone;
+				
+					global.made_dissolve_choice = false;
+					global.dissolve_happen = false;
+				
+					global.phase = global.phase_select;
+					moved = true;
+				}
 				
 			}
 			
@@ -503,31 +691,31 @@ switch (global.phase){
 					global.phase = global.phase_player_choice;
 					audio_play_sound(snd_win,0,0);
 				}else if (play_computer.type == global.paper){
-					if (play_player.type == global.rock){
+					if (play_player.type == global.rock || play_player.type == global.rock2|| play_player.type == global.rock3){
 						global.phase = global.phase_computer_choice;
 						audio_play_sound(snd_lose,0,0);
 					}
-					else if (play_player.type == global.scissors){
+					else if (play_player.type == global.scissors || play_player.type == global.scissors2 || play_player.type == global.scissors3){
 						global.phase = global.phase_player_choice;
 						audio_play_sound(snd_win,0,0);
 					}
 				}
 				else if (play_computer.type == global.rock){
-					if (play_player.type == global.scissors){
+					if (play_player.type == global.scissors || play_player.type == global.scissors2 || play_player.type == global.scissors3){
 						global.phase = global.phase_computer_choice;
 						audio_play_sound(snd_lose,0,0);
 					}
-					else if (play_player.type == global.paper){
+					else if (play_player.type == global.paper || play_player.type == global.paper2 || play_player.type == global.paper3 ){
 						global.phase = global.phase_player_choice;
 						audio_play_sound(snd_win,0,0);
 					}
 				}
 				if (play_computer.type == global.scissors){
-					if (play_player.type == global.paper){
+					if (play_player.type == global.paper || play_player.type == global.paper2 || play_player.type == global.paper3){
 						global.phase = global.phase_computer_choice;
 						audio_play_sound(snd_lose,0,0);
 					}
-					else if (play_player.type == global.rock){
+					else if (play_player.type == global.rock || play_player.type == global.rock2 || play_player.type == global.rock3){
 						global.phase = global.phase_player_choice;
 						audio_play_sound(snd_win,0,0);
 					}
@@ -656,6 +844,7 @@ switch (global.phase){
 		global.combine_happen = false;
 		global.dissolve_happen = false;
 		started = false;
+		moved = false;
 	
 		break;
 		

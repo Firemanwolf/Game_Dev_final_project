@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"spr_paper3","path":"sprites/spr_paper3/spr_paper3.yy",},"order":16,},
     {"id":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},"order":1,},
     {"id":{"name":"spr_paper","path":"sprites/spr_paper/spr_paper.yy",},"order":3,},
     {"id":{"name":"snd_round_win","path":"sounds/snd_round_win/snd_round_win.yy",},"order":8,},
@@ -14,7 +15,9 @@
     {"id":{"name":"spr_rock2","path":"sprites/spr_rock2/spr_rock2.yy",},"order":11,},
     {"id":{"name":"snd_round_draw","path":"sounds/snd_round_draw/snd_round_draw.yy",},"order":10,},
     {"id":{"name":"obj_state_changer","path":"objects/obj_state_changer/obj_state_changer.yy",},"order":7,},
+    {"id":{"name":"spr_scissors3","path":"sprites/spr_scissors3/spr_scissors3.yy",},"order":17,},
     {"id":{"name":"obj_dealer_copy","path":"objects/obj_dealer_copy/obj_dealer_copy.yy",},"order":6,},
+    {"id":{"name":"obj_movement_manager","path":"objects/obj_movement_manager/obj_movement_manager.yy",},"order":8,},
     {"id":{"name":"spr_paper2","path":"sprites/spr_paper2/spr_paper2.yy",},"order":13,},
     {"id":{"name":"spr_state_changer","path":"sprites/spr_state_changer/spr_state_changer.yy",},"order":12,},
     {"id":{"name":"snd_lose","path":"sounds/snd_lose/snd_lose.yy",},"order":1,},
@@ -27,6 +30,7 @@
     {"id":{"name":"obj_dealer","path":"objects/obj_dealer/obj_dealer.yy",},"order":1,},
     {"id":{"name":"snd_defend","path":"sounds/snd_defend/snd_defend.yy",},"order":7,},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"order":3,},
+    {"id":{"name":"spr_rock3","path":"sprites/spr_rock3/spr_rock3.yy",},"order":15,},
     {"id":{"name":"room0","path":"rooms/room0/room0.yy",},"order":1,},
   ],
   "Options": [
