@@ -2,18 +2,18 @@
 //comp_hand_x = 0;
 comp_hand_y = 120;
 
-comp_select_x= 520;
-comp_select_y= 500;
+comp_select_x= 600;
+comp_select_y= 370;
 
 //player_hand_x= 0;
-player_hand_y = 800;
+player_hand_y = 900;
 
-player_select_x = 520;
-player_select_y = 750;
+player_select_x = 600;
+player_select_y = 625;
 
-player_hover = 770;
+player_hover = 880;
 
-discard_y= 320;
+discard_y= 525;
 discard_x= 1100;
 
 

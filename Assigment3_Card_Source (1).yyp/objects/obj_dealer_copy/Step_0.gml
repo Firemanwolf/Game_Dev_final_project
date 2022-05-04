@@ -986,7 +986,7 @@ switch (global.phase){
 			
 		case global.phase_player_choice:
 			for(var i = 0; i< array_length(global.Strategy);i++){
-				var inst = instance_create_depth(200 + 300*i,514,0,obj_choice);
+				var inst = instance_create_depth(350 + 480*i,700,0,obj_choice);
 				inst.choice = global.Strategy[i];
 			}
 			if(global.selected_choice){
