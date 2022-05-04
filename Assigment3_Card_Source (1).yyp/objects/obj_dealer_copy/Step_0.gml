@@ -16,8 +16,8 @@ switch (global.phase){
 					ds_list_delete(deck,ds_list_size(deck)-1);
 					ds_list_add(hand_computer,card);
 				
-					card.target_x = 120 + 100*ds_list_size(hand_computer);
-					card.target_y = 80;
+					card.target_x = 120 + 200*ds_list_size(hand_computer);
+					card.target_y = 120;
 				}
 				//then deal until player hand is full
 				else if (ds_list_size(hand_player) < 3){
@@ -25,8 +25,8 @@ switch (global.phase){
 						var card = deck[| ds_list_size(deck)-1];
 						ds_list_delete(deck,ds_list_size(deck)-1);
 				
-						card.target_x = 220 + 100*ds_list_size(hand_player);
-						card.target_y = 550;
+						card.target_x = 320 + 200*ds_list_size(hand_player);
+						card.target_y = 800;
 						card.in_hand=true;
 				
 						ds_list_add(hand_player,card);
@@ -54,10 +54,10 @@ switch (global.phase){
 				   &&(hand_computer[|1].type != hand_computer[|2].type)
 				   &&(hand_computer[|0].type != hand_computer[|2].type))
 			{
-				play_computer = instance_create_depth(320,240,0,obj_card)
+				play_computer = instance_create_depth(520,500,0,obj_card)
 				play_computer.type = global.virus;
-				play_computer.target_x = 320;
-				play_computer.target_y = 240;
+				play_computer.target_x = 520;
+				play_computer.target_y = 500;
 				play_computer.face_up = true;
 				audio_play_sound(snd_flip,0,0);
 				wait_timer = 0;
@@ -70,8 +70,8 @@ switch (global.phase){
 					//computer plays random card then change state
 					var index = irandom_range(0,ds_list_size(hand_computer)-1);
 					play_computer = hand_computer[| index];
-					play_computer.target_x = 320;
-					play_computer.target_y = 240;
+					play_computer.target_x = 520;
+					play_computer.target_y = 450;
 					if(computer_buffed){
 						play_computer.rank = 3;
 						computer_buffed = false;
@@ -106,9 +106,9 @@ switch (global.phase){
 			{
 				play_player = instance_create_depth(320,386,0,obj_card)
 				play_player.type = global.virus;
-				play_player.target_x = 320;
+				play_player.target_x = 520;
 				//play_player.target_y = 386;
-				play_player.target_y = 550;
+				play_player.target_y = 750;
 				play_player.face_up = true;
 				play_player.in_hand = true;
 				var card = play_player;
@@ -136,12 +136,12 @@ switch (global.phase){
 			var under = instance_position(mouse_x, mouse_y, obj_card);
 			for(var i = 0; i < ds_list_size(hand_player); i++){
 				if (hand_player[|i] != global.selected_card){
-					hand_player[|i].target_y = 550;
+					hand_player[|i].target_y = 780;
 				}
 			}
 			if(under != noone && under != global.selected_card){
 				if(under.in_hand == true){
-					under.target_y = 544
+					under.target_y = 780
 				}
 			}
 			if(mouse_check_button_released(mb_left)){
@@ -160,8 +160,8 @@ switch (global.phase){
 					//play the card
 					var hand_index = ds_list_find_index(hand_player, global.selected_card);
 					play_player = hand_player[| hand_index];
-					play_player.target_x = 320;
-					play_player.target_y = 386;
+					play_player.target_x = 520;
+					play_player.target_y = 750;
 					play_player.in_hand = false;
 					//if(buffed){
 					//	play_player.rank = 3;
@@ -182,12 +182,12 @@ switch (global.phase){
 			var under = instance_position(mouse_x, mouse_y, obj_card);
 			for(var i = 0; i < 3; i++){
 				if (hand_player[|i] != global.selected_card && hand_player[|i] != global.second_selected_card){
-					hand_player[|i].target_y = 550;
+					hand_player[|i].target_y = 750;
 				}
 			}
 			if(under != noone && under != global.selected_card && under != global.second_selected_card){
 				if(under.in_hand == true){
-					under.target_y = 544
+					under.target_y = 520
 				}
 			}
 			if(mouse_check_button_released(mb_left)){
@@ -1052,7 +1052,7 @@ switch (global.phase){
 				ds_list_delete(hand_computer, 0);
 				ds_list_add(discard_pile, card);
 				card.target_y = 320 - ds_list_size(discard_pile)*2;
-				card.target_x = 600;
+				card.target_x = 1100;
 				card.face_up = true;
 				card.targetdepth = deck_size-ds_list_size(discard_pile);
 				audio_play_sound(snd_flip, 0,0);
@@ -1063,7 +1063,7 @@ switch (global.phase){
 					ds_list_delete(hand_player, 0);
 					ds_list_add(discard_pile, card);
 					card.target_y = 320 - ds_list_size(discard_pile)*2;
-					card.target_x = 600;
+					card.target_x = 1100;
 					card.targetdepth = deck_size-ds_list_size(discard_pile);
 					card.in_hand = false;
 					audio_play_sound(snd_flip, 0,0);
