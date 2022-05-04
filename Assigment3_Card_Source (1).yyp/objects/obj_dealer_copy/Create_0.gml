@@ -1,3 +1,22 @@
+//LOCATION VARIABLES
+//comp_hand_x = 0;
+comp_hand_y = 120;
+
+comp_select_x= 520;
+comp_select_y= 500;
+
+//player_hand_x= 0;
+player_hand_y = 800;
+
+player_select_x = 520;
+player_select_y = 750;
+
+player_hover = 770;
+
+discard_y= 320;
+discard_x= 1100;
+
+
 
 started = false;
 emptied_early = false;
