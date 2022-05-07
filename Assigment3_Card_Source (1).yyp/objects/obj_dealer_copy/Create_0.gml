@@ -2,13 +2,13 @@
 //comp_hand_x = 0;
 comp_hand_y = 120;
 
-comp_select_x= 600;
+comp_select_x= 520;
 comp_select_y= 370;
 
 //player_hand_x= 0;
 player_hand_y = 900;
 
-player_select_x = 600;
+player_select_x = 520;
 player_select_y = 625;
 
 player_hover = 880;
