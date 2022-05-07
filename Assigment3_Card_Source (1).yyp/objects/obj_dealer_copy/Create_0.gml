@@ -17,6 +17,11 @@ discard_y= 525;
 discard_x= 1100;
 
 
+// meter handler
+global.stateMeter = instance_find(obj_stateMeter, 0);
+
+
+
 
 started = false;
 emptied_early = false;
@@ -93,7 +98,7 @@ wait_timer = 0;
 
 deck_size = 24;
 
-win_condition = 5;
+win_condition = 20;
 
 global.Strategy[0] = "attack";
 global.Strategy[1] = "defend";

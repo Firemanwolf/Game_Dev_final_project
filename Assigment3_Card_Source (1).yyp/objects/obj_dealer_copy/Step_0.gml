@@ -52,7 +52,13 @@ switch (global.phase){
 		if (wait_timer == 40){
 			if(hand_computer[|0].type != hand_computer[|1].type
 				   &&(hand_computer[|1].type != hand_computer[|2].type)
-				   &&(hand_computer[|0].type != hand_computer[|2].type))
+				   &&(hand_computer[|0].type != hand_computer[|2].type)
+				   && hand_computer[|0].rank == 1
+				   && hand_computer[|1].rank == 1
+				   && hand_computer[|2].rank == 1
+				   && hand_computer[|0].type != global.virus
+				   && hand_computer[|1].type != global.virus
+				   && hand_computer[|2].type != global.virus)
 			{
 				play_computer = instance_create_depth(520,500,0,obj_card)
 				play_computer.type = global.virus;
@@ -132,6 +138,7 @@ switch (global.phase){
 		}
 		
 		if(global.gameState == "play"){
+			global.stateMeter.stateIndicator.x = global.stateMeter.x + 760;
 			//show_debug_message("in play");
 			var under = instance_position(mouse_x, mouse_y, obj_card);
 			for(var i = 0; i < ds_list_size(hand_player); i++){
@@ -179,6 +186,7 @@ switch (global.phase){
 		}else if (global.gameState == "combine"){
 			//show_debug_message("in combine");
 			//show_debug_message(ds_list_size(discard_pile));
+			global.stateMeter.stateIndicator.x = global.stateMeter.x + 150;
 			var under = instance_position(mouse_x, mouse_y, obj_card);
 			for(var i = 0; i < 3; i++){
 				if (hand_player[|i] != global.selected_card && hand_player[|i] != global.second_selected_card){
@@ -240,7 +248,7 @@ switch (global.phase){
 			}
 			
 		}else if (global.gameState == "dissolve"){
-			
+			global.stateMeter.stateIndicator.x = global.stateMeter.x + 440 ;
 			var under = instance_position(mouse_x, mouse_y, obj_card);
 			for(var i = 0; i < ds_list_size(hand_player); i++){
 				if (hand_player[|i] != global.selected_card){
@@ -738,6 +746,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.rock4){
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.rock2;
+				card.rank = 2;
 				
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
@@ -758,6 +767,7 @@ switch (global.phase){
 
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.rock2;
+				card2.rank = 2;
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -773,6 +783,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.rock9){
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.rock3;
+				card.rank = 3
 				
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
@@ -793,6 +804,7 @@ switch (global.phase){
 
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.rock3;
+				card2.rank = 3
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -801,6 +813,7 @@ switch (global.phase){
 				
 				card3 = instance_create_depth(320,240,0,obj_card)
 				card3.type = global.rock3;
+				card3.rank = 3;
 				ds_list_add(discard_pile, card2);
 				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card3.target_x = discard_x;
@@ -892,6 +905,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.scissors4){
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.scissors2;
+				card.rank = 2;
 				
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
@@ -912,6 +926,7 @@ switch (global.phase){
 
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.scissors2;
+				card2.rank = 2
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -927,6 +942,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.scissors9){
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.scissors3;
+				card.rank = 3
 				
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
@@ -947,6 +963,7 @@ switch (global.phase){
 
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.scissors3;
+				card2.rank = 3;
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -955,6 +972,8 @@ switch (global.phase){
 				
 				card3 = instance_create_depth(320,240,0,obj_card)
 				card3.type = global.scissors3;
+				card3.rank = 3;
+				
 				ds_list_add(discard_pile, card2);
 				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card3.target_x = discard_x;
@@ -1049,7 +1068,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.paper4){
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.paper2;
-				
+				card.rank = 2;
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
 				show_debug_message(hand_index);
@@ -1069,6 +1088,7 @@ switch (global.phase){
 
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.paper2;
+				card2.rank = 2;
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -1084,6 +1104,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.paper9){
 				card = instance_create_depth(320,240,0,obj_card)
 				card.type = global.paper3;
+				card.rank = 3;
 				
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
@@ -1104,6 +1125,7 @@ switch (global.phase){
 
 				card2 = instance_create_depth(320,240,0,obj_card)
 				card2.type = global.paper3;
+				card2.rank = 3;
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -1112,6 +1134,7 @@ switch (global.phase){
 				
 				card3 = instance_create_depth(320,240,0,obj_card)
 				card3.type = global.paper3;
+				card3.rank = 3;
 				ds_list_add(discard_pile, card2);
 				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card3.target_x = discard_x;
