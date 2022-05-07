@@ -54,8 +54,13 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
+<<<<<<< Updated upstream
     "xorigin": 90,
     "yorigin": 122,
+=======
+    "xorigin": 32,
+    "yorigin": 32,
+>>>>>>> Stashed changes
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_paper3","path":"sprites/spr_paper3/spr_paper3.yy",},
