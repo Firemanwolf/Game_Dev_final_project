@@ -1,4 +1,4 @@
-//STATE MACHINE
+	//STATE MACHINE
 switch (global.phase){
 	//deal out the cards, three per player
 	case global.phase_deal:
