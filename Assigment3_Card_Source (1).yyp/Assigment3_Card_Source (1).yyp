@@ -5,6 +5,7 @@
     {"id":{"name":"spr_paper","path":"sprites/spr_paper/spr_paper.yy",},"order":3,},
     {"id":{"name":"snd_round_win","path":"sounds/snd_round_win/snd_round_win.yy",},"order":8,},
     {"id":{"name":"spr_scissors","path":"sprites/spr_scissors/spr_scissors.yy",},"order":5,},
+    {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},"order":24,},
     {"id":{"name":"spr_rock4","path":"sprites/spr_rock4/spr_rock4.yy",},"order":18,},
     {"id":{"name":"snd_round_lose","path":"sounds/snd_round_lose/snd_round_lose.yy",},"order":9,},
     {"id":{"name":"snd_attack","path":"sounds/snd_attack/snd_attack.yy",},"order":6,},
