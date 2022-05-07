@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 63,
+  "bbox_right": 179,
   "bbox_top": 0,
-  "bbox_bottom": 63,
+  "bbox_bottom": 252,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 64,
-  "height": 64,
+  "width": 180,
+  "height": 253,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"617053e4-17c7-4788-b668-c4c40535b215","path":"sprites/spr_rock4/spr_rock4.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"617053e4-17c7-4788-b668-c4c40535b215","path":"sprites/spr_rock4/spr_rock4.yy",},"LayerId":{"name":"3ba435f1-6188-475e-b641-fbd2f654516f","path":"sprites/spr_rock4/spr_rock4.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_rock4","path":"sprites/spr_rock4/spr_rock4.yy",},"resourceVersion":"1.0","name":"617053e4-17c7-4788-b668-c4c40535b215","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"e48fe5fb-ac1e-4d0f-a394-9e69928f8f19","path":"sprites/spr_rock4/spr_rock4.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"e48fe5fb-ac1e-4d0f-a394-9e69928f8f19","path":"sprites/spr_rock4/spr_rock4.yy",},"LayerId":{"name":"7143b5e1-9c4f-4c67-9d75-d61c8c190f57","path":"sprites/spr_rock4/spr_rock4.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_rock4","path":"sprites/spr_rock4/spr_rock4.yy",},"resourceVersion":"1.0","name":"e48fe5fb-ac1e-4d0f-a394-9e69928f8f19","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_rock4","path":"sprites/spr_rock4/spr_rock4.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a54de75a-5ba1-4242-928b-1e1c11a96177","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"617053e4-17c7-4788-b668-c4c40535b215","path":"sprites/spr_rock4/spr_rock4.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"de8b587e-5d29-4541-9a76-edd19f10c881","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e48fe5fb-ac1e-4d0f-a394-9e69928f8f19","path":"sprites/spr_rock4/spr_rock4.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -54,8 +54,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 32,
-    "yorigin": 32,
+    "xorigin": 90,
+    "yorigin": 126,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_rock4","path":"sprites/spr_rock4/spr_rock4.yy",},
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3ba435f1-6188-475e-b641-fbd2f654516f","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7143b5e1-9c4f-4c67-9d75-d61c8c190f57","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
