@@ -1341,7 +1341,7 @@ switch (global.phase){
 				ds_list_delete(discard_pile, index);
 				
 				card.face_up = false;
-				card.target_x = 40;
+				card.target_x = 80;
 				card.target_y = 320 - 2*ds_list_size(deck);
 				card.targetdepth = deck_size - ds_list_size(deck);
 			}

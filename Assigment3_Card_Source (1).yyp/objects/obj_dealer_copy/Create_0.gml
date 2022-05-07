@@ -133,7 +133,7 @@ ds_list_shuffle(deck);
 
 //position them nicely
 for (i = 0; i<deck_size; i++){
-	deck[| i].x = 40;
+	deck[| i].x = 80;
 	deck[| i].y = 320-(2*i);
 	deck[| i].target_x = deck[| i].x;
 	deck[| i].target_y = deck[| i].y;
