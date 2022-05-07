@@ -18,7 +18,7 @@ discard_x= 1100;
 
 
 // meter handler
-global.stateMeter = instance_find(obj_stateMeter, 0);
+//global.stateMeter = instance_find(obj_stateMeter, 0);
 
 
 

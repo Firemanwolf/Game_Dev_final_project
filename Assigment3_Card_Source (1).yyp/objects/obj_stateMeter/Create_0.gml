@@ -1,1 +1,1 @@
-stateIndicator = instance_create_depth(x, y, -1, obj_stateIndicator);
+//stateIndicator = instance_create_depth(x, y, -1, obj_stateIndicator);

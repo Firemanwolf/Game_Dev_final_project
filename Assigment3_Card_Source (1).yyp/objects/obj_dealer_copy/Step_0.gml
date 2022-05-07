@@ -138,7 +138,7 @@ switch (global.phase){
 		}
 		
 		if(global.gameState == "play"){
-			global.stateMeter.stateIndicator.x = global.stateMeter.x + 760;
+			//global.stateMeter.stateIndicator.x = global.stateMeter.x + 760;
 			//show_debug_message("in play");
 			var under = instance_position(mouse_x, mouse_y, obj_card);
 			for(var i = 0; i < ds_list_size(hand_player); i++){
@@ -186,7 +186,7 @@ switch (global.phase){
 		}else if (global.gameState == "combine"){
 			//show_debug_message("in combine");
 			//show_debug_message(ds_list_size(discard_pile));
-			global.stateMeter.stateIndicator.x = global.stateMeter.x + 150;
+			//global.stateMeter.stateIndicator.x = global.stateMeter.x + 150;
 			var under = instance_position(mouse_x, mouse_y, obj_card);
 			for(var i = 0; i < 3; i++){
 				if (hand_player[|i] != global.selected_card && hand_player[|i] != global.second_selected_card){
@@ -248,7 +248,7 @@ switch (global.phase){
 			}
 			
 		}else if (global.gameState == "dissolve"){
-			global.stateMeter.stateIndicator.x = global.stateMeter.x + 440 ;
+			//global.stateMeter.stateIndicator.x = global.stateMeter.x + 440 ;
 			var under = instance_position(mouse_x, mouse_y, obj_card);
 			for(var i = 0; i < ds_list_size(hand_player); i++){
 				if (hand_player[|i] != global.selected_card){
