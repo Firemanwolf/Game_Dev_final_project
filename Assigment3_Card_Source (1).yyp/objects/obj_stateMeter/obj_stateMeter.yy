@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_stateMeter",
-    "path": "sprites/spr_stateMeter/spr_stateMeter.yy",
+    "name": "spr_statemeter",
+    "path": "sprites/spr_statemeter/spr_statemeter.yy",
   },
   "solid": false,
   "visible": true,
