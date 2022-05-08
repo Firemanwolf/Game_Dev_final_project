@@ -11,8 +11,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_lose.wav",
-  "duration": 1.012517,
+  "soundFile": "snd_lose.mp3",
+  "duration": 0.313469,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -1,6 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
+audio_play_sound(snd_state_change,0,false);
 if(global.gameState == "combine"){
 	
 	if(!global.combine_happen){

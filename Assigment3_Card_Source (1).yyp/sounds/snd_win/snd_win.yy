@@ -11,8 +11,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_win.wav",
-  "duration": 1.515374,
+  "soundFile": "snd_win.mp3",
+  "duration": 1.536,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -11,8 +11,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_attack.wav",
-  "duration": 0.297415,
+  "soundFile": "snd_attack.mp3",
+  "duration": 1.802449,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

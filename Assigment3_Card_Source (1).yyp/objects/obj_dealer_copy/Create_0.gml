@@ -149,3 +149,4 @@ for (i = 0; i<deck_size; i++){
 	deck[| i].targetdepth = deck_size-i;
 }
 
+audio_play_sound(snd_desert_conflict,0,true);

@@ -67,6 +67,7 @@ switch (global.phase){
 				play_computer.face_up = true;
 				created_virus = true;
 				instance_create_depth(anim_x, anim_y-400,-1, obj_animator);
+				audio_play_sound(snd_combine,0,0);
 				audio_play_sound(snd_flip,0,0);
 				wait_timer = 0;
 				global.gameState = "play";
@@ -123,6 +124,7 @@ switch (global.phase){
 				ds_list_add(hand_player, card);
 				
 				instance_create_depth(anim_x, anim_y,-1, obj_animator);
+				audio_play_sound(snd_combine,0,0);
 				audio_play_sound(snd_flip,0,0);
 				//global.phase = global.phase_play;
 				deck_size -= 2;
@@ -151,6 +153,7 @@ switch (global.phase){
 				}
 			}
 			if(mouse_check_button_released(mb_left)){
+				audio_play_sound(snd_click,0,false);
 				if(global.selected_card == noone){
 					global.selected_card = under;
 				}else{
@@ -198,6 +201,7 @@ switch (global.phase){
 				}
 			}
 			if(mouse_check_button_released(mb_left)){
+				audio_play_sound(snd_click,0,false);
 				if(global.selected_card == noone){
 					global.selected_card = under;
 				}else if (global.selected_card != under) {
@@ -260,6 +264,7 @@ switch (global.phase){
 				}
 			}
 			if(mouse_check_button_released(mb_left)){
+				audio_play_sound(snd_click,0,false);
 				if(global.selected_card == noone){
 					global.selected_card = under;
 				}else{
@@ -302,6 +307,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.rock2;
 				card.rank = 2;
 				
@@ -331,6 +337,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.rock3;
 				card.rank = 3;
 				
@@ -360,6 +367,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.rock4;
 				card.rank = 4;
 				
@@ -389,6 +397,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.rock9;
 				card.rank = 9;
 				
@@ -418,6 +427,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.paper2;
 				card.rank = 2;
 				var hand_index = ds_list_find_index(hand_player, global.selected_card);
@@ -449,6 +459,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.paper3;
 				card.rank = 3;
 				var hand_index = ds_list_find_index(hand_player, global.selected_card);
@@ -480,6 +491,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.paper4;
 				card.rank = 4;
 				
@@ -509,6 +521,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.paper9;
 				card.rank = 9;
 				
@@ -538,6 +551,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.scissors2;
 				card.rank = 2;
 				var hand_index = ds_list_find_index(hand_player, global.selected_card);
@@ -567,6 +581,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.scissors3;
 				card.rank = 3;
 				var hand_index = ds_list_find_index(hand_player, global.selected_card);
@@ -596,6 +611,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(anim_x,anim_y,0,obj_card)
 				instance_create_depth(320,240,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.scissors4;
 				card.rank = 4;
 				
@@ -625,6 +641,7 @@ switch (global.phase){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(anim_x,anim_y,0,obj_card)
 				instance_create_depth(320,240,0,obj_animator)
+				audio_play_sound(snd_combine,0,false);
 				card.type = global.scissors9;
 				card.rank = 9;
 				
@@ -680,6 +697,7 @@ switch (global.phase){
 			if(global.temp.type == global.rock2){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.rock;
 				
 				
@@ -714,6 +732,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.rock3){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.rock;
 				
 				
@@ -757,6 +776,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.rock4){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.rock2;
 				card.rank = 2;
 				
@@ -795,6 +815,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.rock9){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.rock3;
 				card.rank = 3
 				
@@ -833,6 +854,7 @@ switch (global.phase){
 			}else if (global.temp.type == global.scissors2){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.scissors;
 				
 				
@@ -868,6 +890,7 @@ switch (global.phase){
 			}else if (global.temp.type == global.scissors3){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.scissors;
 				
 				
@@ -911,6 +934,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.scissors4){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.scissors2;
 				card.rank = 2;
 				
@@ -949,6 +973,7 @@ switch (global.phase){
 			}else if(global.temp.type == global.scissors9){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.scissors3;
 				card.rank = 3
 				
@@ -987,6 +1012,7 @@ switch (global.phase){
 			}else if (global.temp.type == global.paper2){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.paper;
 				
 				
@@ -1022,6 +1048,7 @@ switch (global.phase){
 			}else if (global.temp.type == global.paper3){
 				card = instance_create_depth(320,240,0,obj_card)
 				instance_create_depth(anim_x,anim_y,0,obj_animator)
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.paper;
 				
 				
@@ -1060,6 +1087,8 @@ switch (global.phase){
 				
 			}else if(global.temp.type == global.paper4){
 				card = instance_create_depth(anim_x,anim_y,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator);
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.paper2;
 				card.rank = 2;
 				
@@ -1096,6 +1125,8 @@ switch (global.phase){
 				
 			}else if(global.temp.type == global.paper9){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator);
+				audio_play_sound(snd_dissolve,0,false);
 				card.type = global.paper3;
 				card.rank = 3;
 				
@@ -1138,6 +1169,9 @@ switch (global.phase){
 				card.type = temp_type[index];
 				card.rank = 1;
 				array_delete(temp_type,index,1);
+				
+				instance_create_depth(anim_x,anim_y,0,obj_animator);
+				audio_play_sound(snd_dissolve,0,false);
 				
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
@@ -1283,6 +1317,7 @@ switch (global.phase){
 			}
 			if(global.selected_choice){
 				if(mouse_check_button(mb_left)){
+					audio_play_sound(snd_click,0,false);
 					if(global.selected_choice.choice == "attack"){
 						audio_play_sound(snd_attack,0,false);
 						computer_score-= play_player.rank;
@@ -1307,6 +1342,8 @@ switch (global.phase){
 			if (play_computer != noone){
 				if(play_computer.type == global.virus) {
 					if(created_virus){
+						instance_create_depth(anim_x,anim_y-400,0,obj_animator);
+						audio_play_sound(snd_dissolve,0,0);
 						instance_destroy(play_computer)
 						created_virus = false;
 					}

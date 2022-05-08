@@ -11,8 +11,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_defend.wav",
-  "duration": 0.646508,
+  "soundFile": "snd_defend.mp3",
+  "duration": 1.863806,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
