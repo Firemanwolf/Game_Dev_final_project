@@ -1105,11 +1105,60 @@ switch (global.phase){
 				
 				global.dissolve_happen = true;
 				
-			}else{
+			}else if(global.temp.type == global.virus){
+				var temp_type = [global.paper, global.rock, global.scissors];
+				randomize();
+				var index = irandom(array_length(temp_type)-1);
+				card = instance_create_depth(320,240,0,obj_card)
+				card.type = temp_type[index];
+				card.rank = 1;
+				array_delete(temp_type,index,1);
+				
+				
+				var hand_index = ds_list_find_index(hand_player, global.temp);
+				
+				var card1 = hand_player[| hand_index];
+			
+				card.target_x = card1.target_x;
+				//card.target_y = card1.target_y;
+				card.target_y = player_hand_y;
+				card.face_up = true;
+				card.in_hand = true;
+
+				ds_list_replace(hand_player, hand_index,card);
+
+				instance_destroy(card1);
+				
+
+				card2 = instance_create_depth(320,240,0,obj_card)
+				index = irandom(array_length(temp_type)-1);
+				card2.type = temp_type[index];
+				card2.rank = 1;
+				array_delete(temp_type,index,1);
+				ds_list_add(discard_pile, card2);
+				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
+				card2.target_x = discard_x;
+				card2.face_up = true;
+				card2.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+				card3 = instance_create_depth(320,240,0,obj_card)
+				index = irandom(array_length(temp_type)-1);
+				card3.type = temp_type[index];
+				card3.rank = 1;
+				array_delete(temp_type,index,1);
+				ds_list_add(discard_pile, card2);
+				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
+				card3.target_x = discard_x;
+				card3.face_up = true;
+				card3.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+				
+				deck_size += 2;
+				
+				global.dissolve_happen = true;
 			
 			
 			
-			}	
 			}else{
 				//if(!moved){
 					global.temp.target_y = player_hand_y;
