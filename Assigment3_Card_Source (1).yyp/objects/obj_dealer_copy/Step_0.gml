@@ -1106,7 +1106,6 @@ switch (global.phase){
 				
 				global.dissolve_happen = true;
 				
-<<<<<<< Updated upstream
 			}else if(global.temp.type == global.virus){
 				var temp_type = [global.paper, global.rock, global.scissors];
 				randomize();
@@ -1159,10 +1158,6 @@ switch (global.phase){
 				
 				global.dissolve_happen = true;
 			
-			
-			
-=======
->>>>>>> Stashed changes
 			}else{
 				//if(!moved){
 					global.temp.target_y = player_hand_y;
