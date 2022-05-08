@@ -11,15 +11,15 @@ draw_self();
 if(global.gameState == "combine"){
 	draw_sprite(spr_combine_H,0,x+150,y+21)
 	draw_sprite(spr_dissolve,0,x+450,y+21);
-	draw_sprite(spr_play,0,x+770,y+20)
+	draw_sprite(spr_play,0,x+730,y+20)
 }else if (global.gameState == "dissolve"){
 	draw_sprite(spr_combine,0,x+150,y+21)
 	draw_sprite(spr_dissolve_H,0,x+450,y+21);
-	draw_sprite(spr_play,0,x+770,y+20)
+	draw_sprite(spr_play,0,x+730,y+20)
 	
 }else{
 	draw_sprite(spr_combine,0,x+150,y+21)
 	draw_sprite(spr_dissolve,0,x+450,y+21);
-	draw_sprite(spr_play_H,0,x+770,y+20)
+	draw_sprite(spr_play_H,0,x+730,y+20)
 
 }
