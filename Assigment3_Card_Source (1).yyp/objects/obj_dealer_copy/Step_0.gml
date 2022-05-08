@@ -964,8 +964,7 @@ switch (global.phase){
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-<<<<<<< HEAD
-=======
+
 				card3 = instance_create_depth(320,240,0,obj_card)
 				card3.type = global.scissors3;
 				card3.rank = 3;
@@ -976,7 +975,6 @@ switch (global.phase){
 				card3.face_up = true;
 				card3.targetdepth = deck_size-ds_list_size(discard_pile);
 				
->>>>>>> 0860e4545e5e06b2a0a4d28223adb665b6478ced
 				
 				deck_size += 2;
 				
@@ -1129,8 +1127,7 @@ switch (global.phase){
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-<<<<<<< HEAD
-=======
+
 				card3 = instance_create_depth(320,240,0,obj_card)
 				card3.type = global.paper3;
 				card3.rank = 3;
@@ -1141,7 +1138,6 @@ switch (global.phase){
 				card3.targetdepth = deck_size-ds_list_size(discard_pile);
 				
 				
->>>>>>> 0860e4545e5e06b2a0a4d28223adb665b6478ced
 				deck_size += 2;
 				
 				global.dissolve_happen = true;
