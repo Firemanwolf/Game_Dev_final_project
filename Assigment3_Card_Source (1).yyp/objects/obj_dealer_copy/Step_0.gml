@@ -201,7 +201,7 @@ switch (global.phase){
 			if(mouse_check_button_released(mb_left)){
 				if(global.selected_card == noone){
 					global.selected_card = under;
-				}else{
+				}else if (global.selected_card != under) {
 					global.second_selected_card = under
 				}
 			}
