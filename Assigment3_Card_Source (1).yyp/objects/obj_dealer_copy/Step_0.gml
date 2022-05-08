@@ -66,8 +66,7 @@ switch (global.phase){
 				play_computer.target_y = comp_select_y;
 				play_computer.face_up = true;
 				created_virus = true;
-				instance_create_depth(anim_x, anim_y,-1, obj_animator);
-				//sh
+				instance_create_depth(anim_x, anim_y-400,-1, obj_animator);
 				audio_play_sound(snd_flip,0,0);
 				wait_timer = 0;
 				global.gameState = "play";
