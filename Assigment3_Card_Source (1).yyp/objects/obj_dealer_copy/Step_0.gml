@@ -1147,7 +1147,7 @@ switch (global.phase){
 				card3.type = temp_type[index];
 				card3.rank = 1;
 				array_delete(temp_type,index,1);
-				ds_list_add(discard_pile, card2);
+				ds_list_add(discard_pile, card3);
 				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card3.target_x = discard_x;
 				card3.face_up = true;
