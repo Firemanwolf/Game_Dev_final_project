@@ -102,7 +102,7 @@ wait_timer = 0;
 
 deck_size = 24;
 
-win_condition = 20;
+win_condition = 10;
 
 global.Strategy[0] = "attack";
 global.Strategy[1] = "defend";

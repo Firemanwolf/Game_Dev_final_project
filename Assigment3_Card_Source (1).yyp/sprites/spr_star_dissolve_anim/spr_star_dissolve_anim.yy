@@ -47,7 +47,7 @@
     "spriteId": {"name":"spr_star_dissolve_anim","path":"sprites/spr_star_dissolve_anim/spr_star_dissolve_anim.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 15.0,
+    "playbackSpeed": 17.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
