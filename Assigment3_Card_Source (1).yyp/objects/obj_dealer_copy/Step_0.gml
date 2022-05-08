@@ -78,10 +78,6 @@ switch (global.phase){
 					play_computer = hand_computer[| index];
 					play_computer.target_x = comp_select_x;
 					play_computer.target_y = comp_select_y;
-					if(computer_buffed){
-						play_computer.rank = 3;
-						computer_buffed = false;
-					}
 					//ds_list_delete(hand_computer,index);
 					audio_play_sound(snd_flip,0,0);
 					wait_timer = 0;
@@ -672,7 +668,6 @@ switch (global.phase){
 				
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
-				show_debug_message(hand_index);
 				
 				var card1 = hand_player[| hand_index];
 			
@@ -706,7 +701,6 @@ switch (global.phase){
 				
 				
 				var hand_index = ds_list_find_index(hand_player, global.temp);
-				show_debug_message(hand_index);
 				
 				var card1 = hand_player[| hand_index];
 			
@@ -766,8 +760,8 @@ switch (global.phase){
 				
 
 				card2 = instance_create_depth(320,240,0,obj_card)
-				card2.type = global.rock2;
-				card2.rank = 2;
+				card2.type = global.virus;
+				card2.rank = 1;
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -803,22 +797,13 @@ switch (global.phase){
 				
 
 				card2 = instance_create_depth(320,240,0,obj_card)
-				card2.type = global.rock3;
-				card2.rank = 3
+				card2.type = global.virus;
+				card2.rank = 1
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
-				
-				card3 = instance_create_depth(320,240,0,obj_card)
-				card3.type = global.rock3;
-				card3.rank = 3;
-				ds_list_add(discard_pile, card2);
-				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
-				card3.target_x = discard_x;
-				card3.face_up = true;
-				card3.targetdepth = deck_size-ds_list_size(discard_pile);
 				
 				
 				deck_size += 2;
@@ -925,8 +910,8 @@ switch (global.phase){
 				
 
 				card2 = instance_create_depth(320,240,0,obj_card)
-				card2.type = global.scissors2;
-				card2.rank = 2
+				card2.type = global.virus;
+				card2.rank = 1
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -962,23 +947,13 @@ switch (global.phase){
 				
 
 				card2 = instance_create_depth(320,240,0,obj_card)
-				card2.type = global.scissors3;
-				card2.rank = 3;
+				card2.type = global.virus;
+				card2.rank = 1;
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
-				
-				card3 = instance_create_depth(320,240,0,obj_card)
-				card3.type = global.scissors3;
-				card3.rank = 3;
-				
-				ds_list_add(discard_pile, card2);
-				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
-				card3.target_x = discard_x;
-				card3.face_up = true;
-				card3.targetdepth = deck_size-ds_list_size(discard_pile);
 				
 				
 				deck_size += 2;
@@ -1087,8 +1062,8 @@ switch (global.phase){
 				
 
 				card2 = instance_create_depth(320,240,0,obj_card)
-				card2.type = global.paper2;
-				card2.rank = 2;
+				card2.type = global.virus;
+				card2.rank = 1;
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
@@ -1124,23 +1099,13 @@ switch (global.phase){
 				
 
 				card2 = instance_create_depth(320,240,0,obj_card)
-				card2.type = global.paper3;
-				card2.rank = 3;
+				card2.type = global.virus;
+				card2.rank = 1;
 				ds_list_add(discard_pile, card2);
 				card2.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card2.target_x = discard_x;
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
-				
-				card3 = instance_create_depth(320,240,0,obj_card)
-				card3.type = global.paper3;
-				card3.rank = 3;
-				ds_list_add(discard_pile, card2);
-				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
-				card3.target_x = discard_x;
-				card3.face_up = true;
-				card3.targetdepth = deck_size-ds_list_size(discard_pile);
-				
 				
 				deck_size += 2;
 				

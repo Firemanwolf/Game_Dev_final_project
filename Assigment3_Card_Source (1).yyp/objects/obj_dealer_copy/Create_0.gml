@@ -85,8 +85,8 @@ global.paper9 = 14;
 global.scissors9 = 15;
 
 
-buffed = false;
-computer_buffed = false;
+//buffed = false;
+//computer_buffed = false;
 
 //track scores
 computer_score = 0;
