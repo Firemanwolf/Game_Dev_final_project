@@ -725,7 +725,7 @@ switch (global.phase){
 				
 				card3 = instance_create_depth(320,240,0,obj_card)
 				card3.type = global.rock;
-				ds_list_add(discard_pile, card2);
+				ds_list_add(discard_pile, card3);
 				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card3.target_x = discard_x;
 				card3.face_up = true;
@@ -805,6 +805,18 @@ switch (global.phase){
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
+<<<<<<< HEAD
+=======
+				card3 = instance_create_depth(320,240,0,obj_card)
+				card3.type = global.rock3;
+				card3.rank = 3;
+				ds_list_add(discard_pile, card3);
+				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
+				card3.target_x = discard_x;
+				card3.face_up = true;
+				card3.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+>>>>>>> 0860e4545e5e06b2a0a4d28223adb665b6478ced
 				
 				deck_size += 2;
 				
@@ -875,7 +887,7 @@ switch (global.phase){
 				
 				card3 = instance_create_depth(320,240,0,obj_card)
 				card3.type = global.scissors;
-				ds_list_add(discard_pile, card2);
+				ds_list_add(discard_pile, card3);
 				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card3.target_x = discard_x;
 				card3.face_up = true;
@@ -955,6 +967,19 @@ switch (global.phase){
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
+<<<<<<< HEAD
+=======
+				card3 = instance_create_depth(320,240,0,obj_card)
+				card3.type = global.scissors3;
+				card3.rank = 3;
+				
+				ds_list_add(discard_pile, card3);
+				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
+				card3.target_x = discard_x;
+				card3.face_up = true;
+				card3.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+>>>>>>> 0860e4545e5e06b2a0a4d28223adb665b6478ced
 				
 				deck_size += 2;
 				
@@ -1027,7 +1052,7 @@ switch (global.phase){
 				
 				card3 = instance_create_depth(320,240,0,obj_card)
 				card3.type = global.paper;
-				ds_list_add(discard_pile, card2);
+				ds_list_add(discard_pile, card3);
 				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
 				card3.target_x = discard_x;
 				card3.face_up = true;
@@ -1107,6 +1132,19 @@ switch (global.phase){
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
+<<<<<<< HEAD
+=======
+				card3 = instance_create_depth(320,240,0,obj_card)
+				card3.type = global.paper3;
+				card3.rank = 3;
+				ds_list_add(discard_pile, card3);
+				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
+				card3.target_x = discard_x;
+				card3.face_up = true;
+				card3.targetdepth = deck_size-ds_list_size(discard_pile);
+				
+				
+>>>>>>> 0860e4545e5e06b2a0a4d28223adb665b6478ced
 				deck_size += 2;
 				
 				global.dissolve_happen = true;
@@ -1157,32 +1195,32 @@ switch (global.phase){
 				}else if (play_player.type == global.virus){
 					global.phase = global.phase_player_choice;
 					audio_play_sound(snd_win,0,0);
-				}else if (play_computer.type == global.paper){
-					if (play_player.type == global.rock || play_player.type == global.rock2|| play_player.type == global.rock3){
+				}else if (play_computer.type == global.paper || play_computer.type == global.paper2|| play_computer.type == global.paper3|| play_computer.type == global.paper4|| play_computer.type == global.paper9){
+					if (play_player.type == global.rock || play_player.type == global.rock2|| play_player.type == global.rock3|| play_player.type == global.rock4|| play_player.type == global.rock9){
 						global.phase = global.phase_computer_choice;
 						audio_play_sound(snd_lose,0,0);
 					}
-					else if (play_player.type == global.scissors || play_player.type == global.scissors2 || play_player.type == global.scissors3){
+					else if (play_player.type == global.scissors || play_player.type == global.scissors2 || play_player.type == global.scissors3|| play_player.type == global.scissors4|| play_player.type == global.scissors9){
 						global.phase = global.phase_player_choice;
 						audio_play_sound(snd_win,0,0);
 					}
 				}
-				else if (play_computer.type == global.rock){
-					if (play_player.type == global.scissors || play_player.type == global.scissors2 || play_player.type == global.scissors3){
+				else if (play_computer.type == global.rock || play_computer.type == global.rock2 || play_computer.type == global.rock3|| play_computer.type == global.rock4|| play_computer.type == global.rock9 ){
+					if (play_player.type == global.scissors || play_player.type == global.scissors2 || play_player.type == global.scissors3|| play_player.type == global.scissors4|| play_player.type == global.scissors9){
 						global.phase = global.phase_computer_choice;
 						audio_play_sound(snd_lose,0,0);
 					}
-					else if (play_player.type == global.paper || play_player.type == global.paper2 || play_player.type == global.paper3 ){
+					else if (play_player.type == global.paper || play_player.type == global.paper2 || play_player.type == global.paper3 || play_player.type == global.paper4|| play_player.type == global.paper9){
 						global.phase = global.phase_player_choice;
 						audio_play_sound(snd_win,0,0);
 					}
 				}
-				if (play_computer.type == global.scissors){
-					if (play_player.type == global.paper || play_player.type == global.paper2 || play_player.type == global.paper3){
+				if (play_computer.type == global.scissors || play_computer.type == global.scissors2|| play_computer.type == global.scissors3|| play_computer.type == global.scissors4|| play_computer.type == global.scissors9 ){
+					if (play_player.type == global.paper || play_player.type == global.paper2 || play_player.type == global.paper3|| play_player.type == global.paper4|| play_player.type == global.paper9){
 						global.phase = global.phase_computer_choice;
 						audio_play_sound(snd_lose,0,0);
 					}
-					else if (play_player.type == global.rock || play_player.type == global.rock2 || play_player.type == global.rock3){
+					else if (play_player.type == global.rock || play_player.type == global.rock2 || play_player.type == global.rock3|| play_player.type == global.rock4|| play_player.type == global.rock9){
 						global.phase = global.phase_player_choice;
 						audio_play_sound(snd_win,0,0);
 					}
