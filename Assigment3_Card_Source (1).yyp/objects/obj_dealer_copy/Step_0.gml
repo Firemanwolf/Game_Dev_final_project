@@ -65,6 +65,7 @@ switch (global.phase){
 				play_computer.target_x = comp_select_x;
 				play_computer.target_y = comp_select_y;
 				play_computer.face_up = true;
+				created_virus = true;
 				audio_play_sound(snd_flip,0,0);
 				wait_timer = 0;
 				global.gameState = "play";
@@ -1105,6 +1106,7 @@ switch (global.phase){
 				
 				global.dissolve_happen = true;
 				
+<<<<<<< Updated upstream
 			}else if(global.temp.type == global.virus){
 				var temp_type = [global.paper, global.rock, global.scissors];
 				randomize();
@@ -1159,6 +1161,8 @@ switch (global.phase){
 			
 			
 			
+=======
+>>>>>>> Stashed changes
 			}else{
 				//if(!moved){
 					global.temp.target_y = player_hand_y;
@@ -1283,8 +1287,11 @@ switch (global.phase){
 			
 			if (play_computer != noone){
 				if(play_computer.type == global.virus) {
-				instance_destroy(play_computer)
-				play_computer = noone;
+					if(created_virus){
+						instance_destroy(play_computer)
+						created_virus = false;
+					}
+					play_computer = noone;
 				}else{
 					//show_debug_message("comp added");
 					//show_debug_message(play_computer);
@@ -1318,13 +1325,15 @@ switch (global.phase){
 			else if (ds_list_size(hand_computer) > 0){
 				var card = hand_computer[| 0];
 				//show_debug_message(card);
-				ds_list_delete(hand_computer, 0);
-				ds_list_add(discard_pile, card);
-				card.target_y = discard_y - ds_list_size(discard_pile)*2;
-				card.target_x = discard_x;
-				card.face_up = true;
-				card.targetdepth = deck_size-ds_list_size(discard_pile);
-				audio_play_sound(snd_flip, 0,0);
+				//if(card != noone){
+					ds_list_delete(hand_computer, 0);
+					ds_list_add(discard_pile, card);
+					card.target_y = discard_y - ds_list_size(discard_pile)*2;
+					card.target_x = discard_x;
+					card.face_up = true;
+					card.targetdepth = deck_size-ds_list_size(discard_pile);
+					audio_play_sound(snd_flip, 0,0);
+				//}
 			}
 			else if (ds_list_size(hand_player) > 0){
 				var card = hand_player[| 0];
