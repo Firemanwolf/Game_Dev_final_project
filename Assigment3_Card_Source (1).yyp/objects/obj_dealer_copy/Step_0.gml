@@ -66,6 +66,8 @@ switch (global.phase){
 				play_computer.target_y = comp_select_y;
 				play_computer.face_up = true;
 				created_virus = true;
+				instance_create_depth(anim_x, anim_y,-1, obj_animator);
+				//sh
 				audio_play_sound(snd_flip,0,0);
 				wait_timer = 0;
 				global.gameState = "play";
@@ -121,6 +123,7 @@ switch (global.phase){
 				ds_list_clear(hand_player);
 				ds_list_add(hand_player, card);
 				
+				instance_create_depth(anim_x, anim_y,-1, obj_animator);
 				audio_play_sound(snd_flip,0,0);
 				//global.phase = global.phase_play;
 				deck_size -= 2;
@@ -299,6 +302,7 @@ switch (global.phase){
 			if (global.selected_card.type == global.rock && global.second_selected_card.type == global.rock){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.rock2;
 				card.rank = 2;
 				
@@ -327,6 +331,7 @@ switch (global.phase){
 			}else if (global.selected_card.type == global.rock && global.second_selected_card.type == global.rock2 || (global.selected_card.type == global.rock2 && global.second_selected_card.type == global.rock )){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.rock3;
 				card.rank = 3;
 				
@@ -355,6 +360,7 @@ switch (global.phase){
 			}else if (global.selected_card.type == global.virus && global.second_selected_card.type == global.rock2 || (global.selected_card.type == global.rock2 && global.second_selected_card.type == global.virus)){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.rock4;
 				card.rank = 4;
 				
@@ -383,6 +389,7 @@ switch (global.phase){
 			}else if (global.selected_card.type == global.virus && global.second_selected_card.type == global.rock3 || (global.selected_card.type == global.rock3 && global.second_selected_card.type == global.virus)){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.rock9;
 				card.rank = 9;
 				
@@ -411,6 +418,7 @@ switch (global.phase){
 			}else if (global.selected_card.type == global.paper && global.second_selected_card.type == global.paper){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.paper2;
 				card.rank = 2;
 				var hand_index = ds_list_find_index(hand_player, global.selected_card);
@@ -441,6 +449,7 @@ switch (global.phase){
 			} else if (global.selected_card.type == global.paper && global.second_selected_card.type == global.paper2 || (global.selected_card.type == global.paper2 && global.second_selected_card.type == global.paper )){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.paper3;
 				card.rank = 3;
 				var hand_index = ds_list_find_index(hand_player, global.selected_card);
@@ -471,6 +480,7 @@ switch (global.phase){
 			}else if (global.selected_card.type == global.virus && global.second_selected_card.type == global.paper2 || (global.selected_card.type == global.paper2 && global.second_selected_card.type == global.virus)){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.paper4;
 				card.rank = 4;
 				
@@ -499,6 +509,7 @@ switch (global.phase){
 			}else if (global.selected_card.type == global.virus && global.second_selected_card.type == global.paper3 || (global.selected_card.type == global.paper3 && global.second_selected_card.type == global.virus)){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.paper9;
 				card.rank = 9;
 				
@@ -527,6 +538,7 @@ switch (global.phase){
 			}else if (global.selected_card.type == global.scissors && global.second_selected_card.type == global.scissors){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.scissors2;
 				card.rank = 2;
 				var hand_index = ds_list_find_index(hand_player, global.selected_card);
@@ -555,6 +567,7 @@ switch (global.phase){
 			}else if (global.selected_card.type == global.scissors && global.second_selected_card.type == global.scissors2 || (global.selected_card.type == global.scissors2 && global.second_selected_card.type == global.scissors)){
 				//show_debug_message(ds_list_size(hand_player));
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.scissors3;
 				card.rank = 3;
 				var hand_index = ds_list_find_index(hand_player, global.selected_card);
@@ -582,7 +595,8 @@ switch (global.phase){
 				global.combine_happen = true;
 			}else if (global.selected_card.type == global.virus && global.second_selected_card.type == global.scissors2 || (global.selected_card.type == global.scissors2 && global.second_selected_card.type == global.virus)){
 				//show_debug_message(ds_list_size(hand_player));
-				card = instance_create_depth(320,240,0,obj_card)
+				card = instance_create_depth(anim_x,anim_y,0,obj_card)
+				instance_create_depth(320,240,0,obj_animator)
 				card.type = global.scissors4;
 				card.rank = 4;
 				
@@ -610,7 +624,8 @@ switch (global.phase){
 			
 			}else if (global.selected_card.type == global.virus && global.second_selected_card.type == global.scissors3 || (global.selected_card.type == global.scissors3 && global.second_selected_card.type == global.virus)){
 				//show_debug_message(ds_list_size(hand_player));
-				card = instance_create_depth(320,240,0,obj_card)
+				card = instance_create_depth(anim_x,anim_y,0,obj_card)
+				instance_create_depth(320,240,0,obj_animator)
 				card.type = global.scissors9;
 				card.rank = 9;
 				
@@ -665,6 +680,7 @@ switch (global.phase){
 		if(!global.dissolve_happen){
 			if(global.temp.type == global.rock2){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.rock;
 				
 				
@@ -698,6 +714,7 @@ switch (global.phase){
 				
 			}else if(global.temp.type == global.rock3){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.rock;
 				
 				
@@ -740,6 +757,7 @@ switch (global.phase){
 				
 			}else if(global.temp.type == global.rock4){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.rock2;
 				card.rank = 2;
 				
@@ -777,6 +795,7 @@ switch (global.phase){
 				
 			}else if(global.temp.type == global.rock9){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.rock3;
 				card.rank = 3
 				
@@ -814,6 +833,7 @@ switch (global.phase){
 				
 			}else if (global.temp.type == global.scissors2){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.scissors;
 				
 				
@@ -848,6 +868,7 @@ switch (global.phase){
 
 			}else if (global.temp.type == global.scissors3){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.scissors;
 				
 				
@@ -890,6 +911,7 @@ switch (global.phase){
 
 			}else if(global.temp.type == global.scissors4){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.scissors2;
 				card.rank = 2;
 				
@@ -927,6 +949,7 @@ switch (global.phase){
 				
 			}else if(global.temp.type == global.scissors9){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.scissors3;
 				card.rank = 3
 				
@@ -964,6 +987,7 @@ switch (global.phase){
 				
 			}else if (global.temp.type == global.paper2){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.paper;
 				
 				
@@ -998,6 +1022,7 @@ switch (global.phase){
 				
 			}else if (global.temp.type == global.paper3){
 				card = instance_create_depth(320,240,0,obj_card)
+				instance_create_depth(anim_x,anim_y,0,obj_animator)
 				card.type = global.paper;
 				
 				
@@ -1035,7 +1060,7 @@ switch (global.phase){
 				global.dissolve_happen = true;
 				
 			}else if(global.temp.type == global.paper4){
-				card = instance_create_depth(320,240,0,obj_card)
+				card = instance_create_depth(anim_x,anim_y,0,obj_card)
 				card.type = global.paper2;
 				card.rank = 2;
 				

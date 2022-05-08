@@ -16,6 +16,9 @@ player_hover = 880;
 discard_y= 525;
 discard_x= 1100;
 
+anim_x = room_width/2-10;
+anim_y = room_height/2+200;
+
 
 // meter handler
 //global.stateMeter = instance_find(obj_stateMeter, 0);
