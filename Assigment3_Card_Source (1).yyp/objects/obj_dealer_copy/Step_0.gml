@@ -805,17 +805,8 @@ switch (global.phase){
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-				card3 = instance_create_depth(320,240,0,obj_card)
-				card3.type = global.rock3;
-				card3.rank = 3;
-				ds_list_add(discard_pile, card3);
-				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
-				card3.target_x = discard_x;
-				card3.face_up = true;
-				card3.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-				
-				deck_size += 2;
+				deck_size += 1;
 				
 				global.dissolve_happen = true;
 				
@@ -964,19 +955,8 @@ switch (global.phase){
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-
-				card3 = instance_create_depth(320,240,0,obj_card)
-				card3.type = global.scissors3;
-				card3.rank = 3;
 				
-				ds_list_add(discard_pile, card3);
-				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
-				card3.target_x = discard_x;
-				card3.face_up = true;
-				card3.targetdepth = deck_size-ds_list_size(discard_pile);
-				
-				
-				deck_size += 2;
+				deck_size += 1;
 				
 				global.dissolve_happen = true;
 				
@@ -1044,14 +1024,7 @@ switch (global.phase){
 				card2.target_x = discard_x;
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
-				
-				card3 = instance_create_depth(320,240,0,obj_card)
-				card3.type = global.paper;
-				ds_list_add(discard_pile, card3);
-				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
-				card3.target_x = discard_x;
-				card3.face_up = true;
-				card3.targetdepth = deck_size-ds_list_size(discard_pile);
+
 				
 				
 				
@@ -1127,22 +1100,16 @@ switch (global.phase){
 				card2.face_up = true;
 				card2.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-
-				card3 = instance_create_depth(320,240,0,obj_card)
-				card3.type = global.paper3;
-				card3.rank = 3;
-				ds_list_add(discard_pile, card3);
-				card3.target_y = discard_y - ds_list_size(discard_pile)*2;
-				card3.target_x = discard_x;
-				card3.face_up = true;
-				card3.targetdepth = deck_size-ds_list_size(discard_pile);
 				
-				
-				deck_size += 2;
+				deck_size += 1;
 				
 				global.dissolve_happen = true;
 				
-				
+			}else{
+			
+			
+			
+			}	
 			}else{
 				//if(!moved){
 					global.temp.target_y = player_hand_y;
