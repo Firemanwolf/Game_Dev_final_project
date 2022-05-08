@@ -22,7 +22,7 @@ discard_x= 1100;
 
 
 
-
+created_virus = false;
 started = false;
 emptied_early = false;
 moved = false;
