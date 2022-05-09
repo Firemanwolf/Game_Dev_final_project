@@ -1,4 +1,4 @@
-	//STATE MACHINE
+//STATE MACHINE
 switch (global.phase){
 	//deal out the cards, three per player
 	case global.phase_deal:
@@ -16,7 +16,7 @@ switch (global.phase){
 					ds_list_delete(deck,ds_list_size(deck)-1);
 					ds_list_add(hand_computer,card);
 				
-					card.target_x = 120 + 200*ds_list_size(hand_computer);
+					card.target_x = 200 + 200*ds_list_size(hand_computer);
 					card.target_y = comp_hand_y;
 				}
 				//then deal until player hand is full
@@ -25,7 +25,7 @@ switch (global.phase){
 						var card = deck[| ds_list_size(deck)-1];
 						ds_list_delete(deck,ds_list_size(deck)-1);
 				
-						card.target_x = 320 + 200*ds_list_size(hand_player);
+						card.target_x = 400 + 200*ds_list_size(hand_player);
 						card.target_y = player_hand_y;
 						card.in_hand=true;
 				

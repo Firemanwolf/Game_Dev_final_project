@@ -2,13 +2,13 @@
 //comp_hand_x = 0;
 comp_hand_y = 120;
 
-comp_select_x= 520;
+comp_select_x= room_width/2;
 comp_select_y= 370;
 
 //player_hand_x= 0;
 player_hand_y = 900;
 
-player_select_x = 520;
+player_select_x = room_width/2;
 player_select_y = 625;
 
 player_hover = 880;
@@ -19,10 +19,6 @@ discard_x= 1100;
 //position of animation
 anim_x = room_width/2-10;
 anim_y = room_height/2+200;
-
-
-// meter handler
-//global.stateMeter = instance_find(obj_stateMeter, 0);
 
 
 
@@ -149,4 +145,3 @@ for (i = 0; i<deck_size; i++){
 	deck[| i].targetdepth = deck_size-i;
 }
 
-audio_play_sound(snd_desert_conflict,0,true);
